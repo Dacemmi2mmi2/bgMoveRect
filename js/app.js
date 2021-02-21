@@ -19,8 +19,8 @@ const moveRect = function moveRectangles(height, width)
         quantityRects = 99;
         scaleMax = 4;
         scaleMin = 2;
-    }    
-console.log(quantityRects);
+    }
+        
     while (htmlElements.textBlockAnimation.nextElementSibling) {
         htmlElements.blockAnimation.removeChild(htmlElements.textBlockAnimation.nextElementSibling);
     }
@@ -56,8 +56,3 @@ const paramScreen = function parametersScreen()
     moveRect(innerHeight, innerWidth);
 }
 paramScreen();
-
-
-window.addEventListener('resize', () => {
-    paramScreen();
-});
