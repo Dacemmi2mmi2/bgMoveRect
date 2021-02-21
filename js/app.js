@@ -11,8 +11,8 @@ const moveRect = function moveRectangles(height, width)
         scaleMin;
 
     if (width > 300){
-        quantityRects = 10;
-        scaleMax = 8;
+        quantityRects = 8;
+        scaleMax = 9;
         scaleMin = 5;
     }
     if (width > 600){
