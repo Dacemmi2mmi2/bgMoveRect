@@ -1,0 +1,13 @@
+@media screen and (max-width: 870px)
+{
+    p
+    {
+        font-size: 5em;
+    }
+
+
+    span
+    {
+        font-size: .5em;
+    }
+}
