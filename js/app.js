@@ -13,12 +13,12 @@ const moveRect = function moveRectangles(height, width)
     if (width > 300){
         quantityRects = 8;
         scaleMax = 9;
-        scaleMin = 5;
+        scaleMin = 6;
     }
     if (width > 600){
-        quantityRects = 99;
-        scaleMax = 4;
-        scaleMin = 2;
+        quantityRects = 49;
+        scaleMax = 6;
+        scaleMin = 3;
     }
         
     while (htmlElements.textBlockAnimation.nextElementSibling) {
@@ -43,9 +43,8 @@ const moveRect = function moveRectangles(height, width)
                 allBlocksRect.forEach(item => {
                 item.style.left = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
                 item.style.top = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
-                item.style.transform = `scale(${Math.floor(Math.random() * (scaleMax - scaleMin)) + scaleMin})`;
             });
-        }, 4000);
+        }, 5000);
     }
     posRect();
 }
