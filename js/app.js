@@ -10,30 +10,37 @@ const moveRect = function moveRectangles(height, width)
         scaleMax,
         scaleMin;
 
-    if (width > 300){
+    if (width > 300 && height < 450){
         quantityRects = 8;
         scaleMax = 9;
         scaleMin = 6;
     }
     if (width > 600){
-        quantityRects = 49;
-        scaleMax = 6;
-        scaleMin = 3;
+        quantityRects = 39;
+        scaleMax = 7;
+        scaleMin = 4;
     }
         
-    while (htmlElements.textBlockAnimation.nextElementSibling) {
-        htmlElements.blockAnimation.removeChild(htmlElements.textBlockAnimation.nextElementSibling);
-    }
+    // while (htmlElements.textBlockAnimation.nextElementSibling) {
+    //     htmlElements.blockAnimation.removeChild(htmlElements.textBlockAnimation.nextElementSibling);
+    // }
 
     for (let i = 0; i <= quantityRects; i++)
     {
         let blockRect = document.createElement('div');
         blockRect.classList.add('blockRect');
         htmlElements.blockAnimation.appendChild(blockRect);
-        blockRect.style.left = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
-        blockRect.style.top = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
         blockRect.style.transform = `scale(${Math.floor(Math.random() * (scaleMax - scaleMin)) + scaleMin})`;
     }
+
+
+    let firstPositionRect = setTimeout(() => {
+        document.querySelectorAll('.blockRect').forEach(item => {
+            item.style.left = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
+            item.style.top = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
+            item.style.boxShadow = `${10}px ${10}px ${50}px rgba(${0}, ${0}, ${0}, ${.4})`;
+        });
+    }, 1000);
 
 
     let posRect = function positionBlockRect()
@@ -44,7 +51,7 @@ const moveRect = function moveRectangles(height, width)
                 item.style.left = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
                 item.style.top = Math.floor(Math.random() * (100 - (-10))) + (-10) + '%';
             });
-        }, 5000);
+        }, 6000);
     }
     posRect();
 }
